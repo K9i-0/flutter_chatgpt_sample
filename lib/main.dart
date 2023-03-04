@@ -1,5 +1,6 @@
 import 'package:dart_openai/openai.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chatgpt_sample/home_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> main() async {
@@ -16,12 +17,18 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      title: 'ChatGPT Sample',
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: const Color(0xFF52c41a),
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        useMaterial3: true,
+        colorSchemeSeed: const Color(0xFF52c41a),
+      ),
+      home: const HomeScreen(),
     );
   }
 }
