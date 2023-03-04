@@ -2,6 +2,7 @@ import 'package:dart_openai/openai.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chatgpt_sample/home_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -9,7 +10,11 @@ Future<void> main() async {
   await dotenv.load(fileName: '.env');
   OpenAI.apiKey = dotenv.get('OPEN_AI_API_KEY');
 
-  runApp(const MainApp());
+  runApp(
+    const ProviderScope(
+      child: MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
