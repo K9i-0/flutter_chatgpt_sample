@@ -79,6 +79,8 @@ class HomeScreen extends HookConsumerWidget {
             // メッセージ一覧
             Expanded(
               child: ListView.separated(
+                keyboardDismissBehavior:
+                    ScrollViewKeyboardDismissBehavior.onDrag,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 itemCount: messages.length,
                 itemBuilder: (context, index) {
