@@ -13,7 +13,7 @@ class Messages extends _$Messages {
   List<OpenAIChatCompletionChoiceMessageModel> build() => [
         // システムメッセージでAIの動作を調整
         OpenAIChatCompletionChoiceMessageModel(
-          content: '日本語で技術の相談をされます。あなたはエクスパートです。',
+          content: '日本語で技術の相談をされます。あなたはエキスパートです。',
           role: 'system',
         ),
       ];

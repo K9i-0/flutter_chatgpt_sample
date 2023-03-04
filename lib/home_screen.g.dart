@@ -6,7 +6,7 @@ part of 'home_screen.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$messagesHash() => r'266369a804a382c8cf1a77cb93937a13b64395bd';
+String _$messagesHash() => r'7075908b336e7661e2ee50b0b91ec56d7b8d27c1';
 
 /// See also [Messages].
 @ProviderFor(Messages)
