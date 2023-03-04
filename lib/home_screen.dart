@@ -49,10 +49,7 @@ class Messages extends _$Messages {
     final chatCompletion = await OpenAI.instance.chat.create(
       model: 'gpt-3.5-turbo',
       // これまでのやりとりを含めて送信
-      messages: [
-        ...state,
-        newUserMessage,
-      ],
+      messages: state,
     );
     // 結果を追加
     state = [
@@ -164,6 +161,7 @@ class HomeScreen extends HookConsumerWidget {
                       ),
                     ),
                     const SizedBox(width: 8),
+                    // 送信ボタン
                     if (!isWaiting.value)
                       IconButton(
                         onPressed: () async {
@@ -192,6 +190,7 @@ class HomeScreen extends HookConsumerWidget {
                                 child: CircularProgressIndicator(),
                               ),
                       ),
+                    // 送信中
                     if (isWaiting.value)
                       const IconButton(
                         onPressed: null,
